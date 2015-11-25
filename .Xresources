@@ -1,0 +1,89 @@
+! urxvt
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+!URxvt*font: xft:inconsolata
+!URxvt*font: xft:inconsolata\ for\ Powerline
+URxvt*font:  xft:Inconsolata
+URxvt*depth: 0
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*loginShell: true
+URxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 5000
+URxvt*termName: rxvt-unicode
+URxvt.urlLauncher: google-chrome-stable
+URxvt.matcher.button: 1
+URxvt.iso14755: False
+URxvt.intensityStyles: false
+URxvt*.transparent: false
+
+!! drop in custom colorscheme for Xresources/Xdefaults
+!!Solarized
+!*background:            #002b36
+!*foreground:            #657b83
+!*cursorColor:           #93a1a1
+!*pointerColorBackground:#586e75
+!*pointerColorForeground:#93a1a1
+!
+!!! black dark/light
+!*color0:                #839496
+!*color8:                #002b36
+!
+!!! red dark/light
+!*color1:                #dc71c4
+!*color9:                #cb4b16
+!
+!!! green dark/light
+!*color2:                #859900
+!*color10:               #586e75
+!
+!!! yellow dark/light
+!*color3:                #b58900
+!*color11:               #657b83
+!
+!!! blue dark/light
+!*color4:                #268bd2
+!*color12:               #839496
+!
+!!! magenta dark/light
+!*color5:                #d33682
+!*color13:               #6c71c4
+!
+!!! cyan dark/light
+!*color6:                #2aa198
+!*color14:               #93a1a1
+!
+!!! white dark/light
+!*color7:                #eee8d5
+!*color15:               #fdf6e3
+
+! Eget schema
+! special
+*.foreground:   #ff9933
+*.background:   #002828
+*.cursorColor:  #ff9933
+
+*.color0:       #005151
+*.color8:       #995b1e
+
+*.color1:       #995b1e
+*.color9:       #995b1e
+
+*.color2:       #ff9933
+*.color10:      #ff9933
+
+*.color3:       #995b1e
+*.color11:      #995b1e
+
+*.color4:       #006666
+*.color12:      #006666
+
+*.color5:       #ff9933
+*.color13:      #ff9933
+
+*.color6:       #663d14
+*.color14:      #663d14
+
+*.color7:       #ff9933
+*.color15:      #4c9393
