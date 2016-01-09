@@ -75,7 +75,12 @@ TEXT
 {
   "full_text" : "$cpu%",
   "color" :
-    ${if_match $cpu<80}"\#4C9393"${else}"\#ff0000"${endif}
+    ${if_match $cpu<80}"\#4C9393"${else}"\#ff0000"${endif},
+	"separator" : false
+},
+{
+	"full_text" : "${exec sensors | grep Physical$1 | awk '{print $4}'}",
+	"color" : "\#4C9393"
 },
 {
   "full_text" : "Battery: ",
@@ -86,9 +91,7 @@ TEXT
 {
   "full_text" : "${battery_percent BAT0}% ",
   "color" :
-    ${if_match ${battery_percent BAT0}<10}"\#ff0000"${else}"\#4C9393"${endif},
-  "separator" : true
-#  "separator_block_width" : 1
+    ${if_match ${battery_percent BAT0}<10}"\#ff0000"${else}"\#4C9393"${endif}
 },
 {
   "full_text" : "${battery_time BAT0}",
