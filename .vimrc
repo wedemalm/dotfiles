@@ -30,6 +30,7 @@ set number
 set ruler
 set shiftwidth=2
 set tabstop=2
+set showcmd
 
 "Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
