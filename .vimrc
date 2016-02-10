@@ -30,7 +30,6 @@ set number
 set ruler
 set shiftwidth=2
 set tabstop=2
-set showcmd
 
 "Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -87,3 +86,6 @@ set ignorecase
 
 "YCM
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+"Don't know why but this need to be at bottom for me to work
+set showcmd
