@@ -1,91 +1,50 @@
-let s:editor_root=expand("~/.vim")
+set nocompatible		" be iMproved, required
+filetype off			" required
 
-set nocompatible "be Improved, required for Vundle
-filetype off 	 "required for Vundle
-
-"set the runtime path to include Vundle and initialize
+" set runtime path to include Vundle initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin("~/.vim/bundle")
+call vundle#begin()
+"alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
 
-
-" let Vundle manage Vundle, required for Vundle
+" let Vundle manage vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
-Plugin 'vim-startify'
-Plugin 'ctrlp.vim'
-Plugin 'YouCompleteMe'
-Plugin 'YCM-Generator'
-Plugin 'vim-easy-align'
-Plugin 'nerdtree'
-Plugin 'vim-trailing-whitespace'
-Plugin 'incsearch.vim'
-Plugin 'delimitMate'
-
-"All of your Plugins must be added before the following line
-call vundle#end()            " required for Vundle
-filetype plugin indent on    " required for Vundle
+" All of your Plugins must be added before the following line
+call vundle#end()		"required
+filetype plugin indent on 	"required
 
 set relativenumber
 set number
-set ruler
-set shiftwidth=2
-set tabstop=2
-
-"Press Space to turn off highlighting and clear any message already displayed.
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-"set hilight options
-hi MatchParen cterm=none ctermbg=14 ctermfg=15
-hi Visual cterm=none ctermbg=1 ctermfg=2
-
-"Startify-options
-let g:startify_bookmarks = ['~/.vimrc']
-hi StartifyFile ctermfg=15
-
-let g:startify_custom_header = [
-			\ '                          ___			',
-			\ '                       .-"-~-"-.			',
-			\ '                      /.-"-.-"-.\		',
-			\ '                      ||((o|o))||		',
-			\ '                      )\__/V\__/(		',
-			\ '                     / ~ -...- ~ \		',
-			\ '                    |\` ~. ~ .~ `/|		',
-			\ '                 () | `~ - ^ - ~` |		',
-			\ '             () //  | ; ''    :  . |		',
-			\ '            ()\\/_() \ . :    ; ''/		',
-			\ '           ___/ /_____''.   ; '' . ____	',
-			\ '                 _   ^ `uu---uu`    /\	',
-			\ '          _____________^ _________^_\/	',
-			\ '                       \ \				',
-			\ '                       //\\()			',
-			\ '                     ()/  ()				',
-			\ '                      ()					',
-			\ '',
-			\ '',
-			\ ]
-
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Startify | endif
-
-"using 16bit colors
-set t_Co=16
-set nocompatible
-syntax enable
-set background=dark
-
-"Ctrl-P
-let g:ctrlp_show_hidden = 1
-
-"Easy-Align
-vmap <Enter> <Plug>(EasyAlign)
-
-"incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-set hlsearch
-"let g:incsearch#auto_nohlsearch = 1
-set ignorecase
-
-"YCM
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-"Don't know why but this need to be at bottom for me to work
 set showcmd
+
+nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
+
+map  / <Plug>(incsearch-forward)
+map  ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map  n <Plug>(incsearch-nohl-n)
+map  N <Plug>(incsearch-nohl-N)
+map  * <Plug>(incsearch-nohl-*)
+map  # <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltisnipsJumForwardTrigger="<c-j>"
+let g:UltisnipsJumBackwardTrigger="<c-k>"
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
