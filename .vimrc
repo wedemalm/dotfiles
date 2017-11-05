@@ -24,9 +24,27 @@ Plugin 'honza/vim-snippets'
 call vundle#end()		"required
 filetype plugin indent on 	"required
 
+syntax on
+
+set t_Co=16
+
+hi Visual ctermfg=2 ctermbg=4
+hi Constant ctermfg=1
+hi Search ctermfg=2 ctermbg=4
+hi Special ctermfg=2
+
+"highlight Comment ctermbg=1
+"highlight Constant ctermbg=1
+"highlight Normal ctermbg=1
+"highlight NonText ctermbg=1
+"highlight Special ctermbg=1
+"highlight Cursor ctermbg=1
+
 set relativenumber
 set number
 set showcmd
+set ts=2
+set shiftwidth=2
 
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
